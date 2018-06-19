@@ -1,0 +1,1 @@
+print("This is system __init__ , progress:" + __name__);
