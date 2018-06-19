@@ -276,17 +276,14 @@ def __file_process():
 
 def __reload_modules():
     try:
-        flag="/opt/rmrb/ss/modules/reload"
+        flag="/opt/rmrb/reboot"
 
         if not os.path.isfile(flag):
             return
 
         """delete flag file"""
         os.remove(flag)
-
-        """ do reload """
-        import xorg_monitor
-        reload(xorg_monitor)
+        os.system('sudo reboot')
 
     except:
         return;
