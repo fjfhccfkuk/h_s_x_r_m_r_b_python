@@ -308,7 +308,7 @@ class WinCtrl(TouchListener, InterfaceWinCtrl, _TimerListener):
 
     def __run_browser(self):
         browser = webbrowser.get("google-chrome")
-        url = "file:///home/rmrb-enewspaper/.rmrb_player/html/index.html"
+        url = "file:///home/rmrb-enewspaper/workspace/rmrb_package/opt/rmrb/html/index.html"
         browser.open_new(url)
 
     def __replace_rmrb_win(self, win):
