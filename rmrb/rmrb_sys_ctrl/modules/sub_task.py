@@ -294,7 +294,7 @@ def __reload_modules():
 
 
 def fork_task():
-    __file_process()
+#    __file_process()
     __reload_modules()
     try:
         import xorg_monitor as xorg

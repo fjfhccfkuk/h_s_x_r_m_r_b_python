@@ -1,51 +1,51 @@
 #!/usr/bin/env python
 
 
-import os;
-import multiprocessing;
-import time;
+import os
+import multiprocessing
+import time
 from system import version_request
 
-print("This is main.py , progress:" + __name__);
+print("This is main.py , progress:" + __name__)
 
 def __doLoadModules():
     try:
-        import rmrb.modules;
+        import rmrb.modules
     except:
-        print("exception e");
+        print("exception e")
     finally:
-        print("----- import modules end -----");
+        print("----- import modules end -----")
 
 
 def __kill_progress():
-    bRet = False;
+    bRet = False
     try:
         tmpDir = "/tmp/.rmrb-adc.lock"
 
         if not os.path.isfile(tmpDir):
-            bRet = True;
-            return bRet;
+            bRet = True
+            return bRet
 
 
-        local_file = open(tmpDir, 'r');
-        strPid = local_file.readline();
+        local_file = open(tmpDir, 'r')
+        strPid = local_file.readline()
 #        intPid
 
-        local_file.close();
+        local_file.close()
     except Exception,e:
         print(" __kill_progress, excp:" + e.message)
-    return bRet;
+    return bRet
 
 
 def __write_pid():
     try:
         tmpDir = "/tmp/.rmrb-adc.lock"
 
-        pid = os.getpid();
+        pid = os.getpid()
 
-        local_file = open(tmpDir, 'w+');
-        local_file.write(str(pid));
-        local_file.close();
+        local_file = open(tmpDir, 'w+')
+        local_file.write(str(pid))
+        local_file.close()
 
         print("main.__write_pid:  my pid:%d" % pid)
     except Exception, e:
@@ -54,48 +54,48 @@ def __write_pid():
 
 def __doDaemon():
 
-    __doLoadModules();
+    __doLoadModules()
 
-    __write_pid();
+    __write_pid()
 
     while True:
         try:
-            url = version_request.reportAppInfo_sync();
+            url = version_request.reportAppInfo_sync()
 
             url = str(url)
             print(" exception      url:" + url)
             if (url != ""):
-                version_request.upgradeApplication(url);
-                print("update application  yes");
+                version_request.upgradeApplication(url)
+                print("update application  yes")
             else:
-                print("update application  no");
+                print("update application  no")
 
         except IOError:
-            print("Daemon Except: io error");
+            print("Daemon Except: io error")
         except KeyboardInterrupt:
-            print("DAemon Keyboard interrupt, hehe. do nothing");
+            print("DAemon Keyboard interrupt, hehe. do nothing")
         except Exception, e:
-            print("Daemon excp:" + e.message);
+            print("Daemon excp:" + e.message)
         finally:
-            print("Daemon finally()");
-        time.sleep(30);
+            print("Daemon finally()")
+        time.sleep(30)
 
 
 def runInMultiProcess():
     try:
-        print("runInMultiProcess().......");
-        p = multiprocessing.Process(target=__doDaemon(), args=(1, ));
-        p.start();
+        print("runInMultiProcess().......")
+        p = multiprocessing.Process(target=__doDaemon)
+        p.start()
 
     except Exception,e:
-        print("runInMultiProcess, excp: " + e.message);
+        print("runInMultiProcess, excp: " + e.message)
     finally:
-        print("");
+        print("")
 
-    return;
+    return
 
 
-runInMultiProcess();
+runInMultiProcess()
 
 
 
