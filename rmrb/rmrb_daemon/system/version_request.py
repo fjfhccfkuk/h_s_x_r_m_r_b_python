@@ -89,7 +89,7 @@ if (major_ver == 2):
                 url_len = url_len - 1;
                 url = urls[--url_len];
                 retCode, upgradeUrl = __doReportAppInfoWithUrl(url);
-                if (retCode == 200):
+                if retCode == 200:
                     break;
 
             print("__doReportAppInfo, retCode:%d" % retCode)

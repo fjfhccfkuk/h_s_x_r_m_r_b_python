@@ -12,8 +12,8 @@ print("This is main.py , progress:" + __name__)
 def __doLoadModules():
     try:
         import rmrb.modules
-    except:
-        print("exception e")
+    except Exception, e:
+        print '__doLoadModules, excp:%s' % e.message
     finally:
         print("----- import modules end -----")
 
@@ -61,10 +61,12 @@ def __doDaemon():
 
     while True:
         try:
+            print '__doDaemon... report AppInfo ....'
             url = version_request.reportAppInfo_sync()
 
             url = str(url)
-            print(" exception      url:" + url)
+            print '__doDaemon... report AppInfo get url:%s' % url
+
             if (url != ""):
                 version_request.upgradeApplication(url)
                 print("update application  yes")
@@ -85,8 +87,9 @@ def __doDaemon():
 def runInMultiProcess():
     try:
         print("runInMultiProcess().......")
-        p = multiprocessing.Process(target=__doDaemon)
-        p.start()
+        __doDaemon()
+#        p = multiprocessing.Process(target=__doDaemon)
+#        p.start()
 
     except Exception, e:
         print("runInMultiProcess, excp: " + e.message)
