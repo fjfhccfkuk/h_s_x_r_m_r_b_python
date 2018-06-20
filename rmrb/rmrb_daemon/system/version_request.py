@@ -263,7 +263,7 @@ def __upgradeApplicationWithUrl(url):
 #            print("__upgradeApplicationWithUrl, md5value:" + md5value);
 
             if (retCode == 200):
-                __UpgradeModules(response, "/tmp/" + md5value + ".zip", md5value);
+                __UpgradeModules(response, "/tmp/" + md5value + ".deb", md5value);
 
             connection.close();
 
