@@ -263,10 +263,9 @@ class AdCallback(HttpReq):
     def _do_request(self):
         print 'Am AdCallback._do_request(). '
         try:
-            url = self.get_url() + 'suffx'
+            url = self.get_url()
             con = urllib2.urlopen(url)
             if con and con.code == 200:
-#                print 'AdCallback req successfully. url:[%s]' % url
                 self._set_req_done()
         except urllib2.HTTPError, e:
             print ' req excp:', e.message
