@@ -211,8 +211,10 @@ def __UpgradeModules(response, localFile, md5=""):
                 return;
             """
 
-            cmd  =  'sudo dpkg -i %' % localFile
-            os.system(cmd)
+            cmd  =  'dpkg -i %s' % localFile
+            print '__UpgradeModules, install app command:%s' % cmd
+
+#            os.system(cmd)
 
             #reload module
             print("__UpgradeModules, reloadmodules");
