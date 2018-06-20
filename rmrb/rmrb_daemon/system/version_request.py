@@ -214,7 +214,7 @@ def __UpgradeModules(response, localFile, md5=""):
             cmd  =  'dpkg -i %s' % localFile
             print '__UpgradeModules, install app command:%s' % cmd
 
-#            os.system(cmd)
+            os.system(cmd)
 
             #reload module
             print("__UpgradeModules, reloadmodules");
