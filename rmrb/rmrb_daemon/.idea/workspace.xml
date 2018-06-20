@@ -29,8 +29,8 @@
       <file leaf-file-name="version_request.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/system/version_request.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="214" column="66" selection-start-line="214" selection-start-column="66" selection-end-line="214" selection-end-column="66" />
+            <state relative-caret-position="62">
+              <caret line="219" lean-forward="true" selection-start-line="219" selection-end-line="219" />
             </state>
           </provider>
         </entry>
@@ -279,7 +279,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15295358" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -289,7 +288,7 @@
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49947917" visible="true" weight="0.34778014" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49947917" weight="0.34778014" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -590,8 +589,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/system/version_request.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="214" column="66" selection-start-line="214" selection-start-column="66" selection-end-line="214" selection-end-column="66" />
+        <state relative-caret-position="62">
+          <caret line="219" lean-forward="true" selection-start-line="219" selection-end-line="219" />
         </state>
       </provider>
     </entry>
